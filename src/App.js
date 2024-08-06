@@ -39,7 +39,8 @@ function App() {
     <div className="App">
       <div id="drum-machine">
         <h1>Drum Machine</h1>
-        <div id="display"><span>display:</span>
+        <div id="display">
+          <span>display:</span>
           {activeKey}
         </div>
         <div className="drum-pads">
