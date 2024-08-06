@@ -38,7 +38,8 @@ function App() {
   return (
     <div className='App'>
       <div id='drum-machine'>
-        <div id='display'>{activeKey}</div>
+        <h1>Drum Machine</h1>
+        <div id='display'>Display:  {activeKey}</div>
         <div className='drum-pads'>
           {drumPads.map((drumPad) => (
             <div
