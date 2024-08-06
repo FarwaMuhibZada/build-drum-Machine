@@ -36,25 +36,27 @@ function App() {
   ];
 
   return (
-    <div className='App'>
-      <div id='drum-machine'>
+    <div className="App">
+      <div id="drum-machine">
         <h1>Drum Machine</h1>
-        <div id='display'>
-          Display: {activeKey}
+        <div id="display">
+          {activeKey}
         </div>
         <div className='drum-pads'>
           {drumPads.map((drumPad) => (
             <div
               key={drumPad.src}
               onClick={() => playSound(drumPad.text)}
-              className='drum-pad'
+              className="drum-pad"
               id={drumPad.src}
-              role='button'
+              role="button"
               tabIndex={0}
               onKeyPress={() => playSound(drumPad.text)}
             >
               {drumPad.text}
-              <audio className='clip' id={drumPad.text} src={drumPad.src} />
+              <audio className="clip" id={drumPad.text} src={drumPad.src}>
+                <track kind='captions' srcLang='en' label='English captions' src='path/to/captions.vtt' />
+              </audio>
             </div>
           ))}
         </div>
