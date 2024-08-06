@@ -42,7 +42,7 @@ function App() {
         <div id="display">
           {activeKey}
         </div>
-        <div className='drum-pads'>
+        <div className="drum-pads">
           {drumPads.map((drumPad) => (
             <div
               key={drumPad.src}
@@ -55,7 +55,7 @@ function App() {
             >
               {drumPad.text}
               <audio className="clip" id={drumPad.text} src={drumPad.src}>
-                <track kind='captions' srcLang='en' label='English captions' src='path/to/captions.vtt' />
+                <track kind="captions" srcLang="en" label="English captions" src="path/to/captions.vtt" />
               </audio>
             </div>
           ))}
