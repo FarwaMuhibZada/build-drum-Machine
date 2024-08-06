@@ -4,6 +4,14 @@ import './App.css';
 function App() {
   const [activeKey, setActiveKey] = useState('');
 
+  const playSound = (selector) => {
+    const audio = document.getElementById(selector);
+    if (audio) {
+      audio.play();
+      setActiveKey(selector);
+    }
+  };
+
   useEffect(() => {
     const handleKeyDown = (event) => {
       playSound(event.key.toUpperCase());
@@ -24,22 +32,16 @@ function App() {
     { keyCode: 68, text: 'D', src: 'https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3' },
     { keyCode: 90, text: 'Z', src: 'https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3' },
     { keyCode: 88, text: 'X', src: 'https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3' },
-    { keyCode: 67, text: 'C', src: 'https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3' }
+    { keyCode: 67, text: 'C', src: 'https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3' },
   ];
-
-  const playSound = (selector) => {
-    const audio = document.getElementById(selector);
-    if (audio) {
-      audio.play();
-      setActiveKey(selector);
-    }
-  };
 
   return (
     <div className='App'>
       <div id='drum-machine'>
         <h1>Drum Machine</h1>
-        <div id='display'>Display:  {activeKey}</div>
+        <div id='display'>
+          Display: {activeKey}
+        </div>
         <div className='drum-pads'>
           {drumPads.map((drumPad) => (
             <div
@@ -47,9 +49,12 @@ function App() {
               onClick={() => playSound(drumPad.text)}
               className='drum-pad'
               id={drumPad.src}
+              role='button'
+              tabIndex={0}
+              onKeyPress={() => playSound(drumPad.text)}
             >
               {drumPad.text}
-              <audio className='clip' id={drumPad.text} src={drumPad.src}></audio>
+              <audio className='clip' id={drumPad.text} src={drumPad.src} />
             </div>
           ))}
         </div>
