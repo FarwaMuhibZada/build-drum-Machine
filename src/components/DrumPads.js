@@ -61,8 +61,8 @@ const DrumPads = () => {
           ))}
         </div>
       </div>
-    </div>  
+    </div>
   );
-}
+};
 
 export default DrumPads;
