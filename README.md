@@ -24,6 +24,7 @@
 
 
 ## Demo 📸
+deployment link [(https://drum-machine-farwaamhubzada.netlify.app/)]
 
 ![Random Quote Machine Screenshot](./src/assets/Capture.PNG)
 
