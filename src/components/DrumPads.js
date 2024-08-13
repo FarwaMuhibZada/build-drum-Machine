@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const DrumPads = () => {
+function DrumPads() {
   const [activeKey, setActiveKey] = useState('');
 
   const playSound = (selector) => {
@@ -63,6 +63,6 @@ const DrumPads = () => {
       </div>
     </div>
   );
-};
+}
 
 export default DrumPads;
